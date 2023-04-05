@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from flask import Flask
+"""conector"""
 
 
 app = Flask(__name__)
@@ -18,6 +19,7 @@ def c_is_fun(text):
     return f"C {text}"
 
 
+"""entry point"""
 if __name__ == "__main__":
     """run flask"""
     app.run(host="0.0.0.0", port=5000)

@@ -15,6 +15,7 @@ def hbnb():
 """decorate"""
 @app.route('/c/<text>', strict_slashes=False)
 def c_is_fun(text):
+    """return"""
     text = text.replace("_", " ")
     return f"C {text}"
 

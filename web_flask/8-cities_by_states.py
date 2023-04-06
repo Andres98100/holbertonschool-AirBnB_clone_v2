@@ -14,6 +14,7 @@ def display_cities():
     state = storage.all(State).values()
     return render_template("8-cities_by_states.py", states=state)
 
+
 @app.teardown_appcontext
 def close(error):
     """return"""

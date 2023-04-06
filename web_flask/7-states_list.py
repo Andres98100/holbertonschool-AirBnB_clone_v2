@@ -17,8 +17,10 @@ def display_states():
 """decorate"""
 @app.teardown_appcontext
 def close_db():
+    """storage"""
     storage.close()
 
 
+"""entry point"""
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

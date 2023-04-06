@@ -11,7 +11,7 @@ app = Flask(__name__)
 @app.route('/states_list', strict_slashes=False)
 def display_states():
     """variable show the list"""
-    state = storage.all(State).order_by(State.name).values()
+    state = sorted(storage.all(State).values(), key=lambda x: x.name)
     return render_template("7-states_list.html", states=state)
 
 

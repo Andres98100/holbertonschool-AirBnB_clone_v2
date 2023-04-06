@@ -7,9 +7,6 @@ from models import storage, State
 app = Flask(__name__)
 
 
-"""decorate"""
-
-
 @app.route('/states_list', strict_slashes=False)
 def display_states():
     """variable"""
@@ -18,16 +15,10 @@ def display_states():
     return render_template("7-states_list.html", state=state)
 
 
-"""decorate"""
-
-
 @app.teardown_appcontext
 def close_db():
     """storage"""
     storage.close()
-
-
-"""entry point"""
 
 
 if __name__ == '__main__':

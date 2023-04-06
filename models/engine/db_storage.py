@@ -32,8 +32,10 @@ class DBStorage:
             Base.metadata.drop_all(self.__engine)
 
     def all(self, cls=None):
+        """variable"""
         dic = {}
         if cls:
+            """conditional"""
             if type(cls) is str:
                 cls = eval(cls)
             query = self.__session.query(cls)
@@ -47,6 +49,7 @@ class DBStorage:
                 for elem in query:
                     key = "{}.{}".format(type(elem).__name__, elem.id)
                     dic[key] = elem
+        """return"""
         return (dic)
 
     def new(self, obj):
@@ -63,6 +66,7 @@ class DBStorage:
             self.__session.delete(obj)
 
     def reload(self):
+        """"""
         Base.metadata.create_all(self.__engine)
         sec = sessionmaker(bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(sec)

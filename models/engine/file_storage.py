@@ -46,6 +46,7 @@ class FileStorage:
                     'State': State, 'City': City, 'Amenity': Amenity,
                     'Review': Review
                     }
+        """exception"""
         try:
             temp = {}
             with open(FileStorage.__file_path, 'r') as f:

@@ -50,12 +50,15 @@ class DBStorage:
         return (dic)
 
     def new(self, obj):
+        """new"""
         self.__session.add(obj)
 
     def save(self):
+        """save"""
         self.__session.commit()
 
     def delete(self, obj=None):
+        """delete"""
         if obj:
             self.__session.delete(obj)
 
@@ -66,4 +69,5 @@ class DBStorage:
         self.__session = Session()
 
     def close(self):
+        """close"""
         self.__session.close()
